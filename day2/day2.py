@@ -4,10 +4,33 @@ with open('day2.in') as file:
 
 # print(data)
 
-x, y, z = 1, 2, 3
-a, b, c, = x, y, z
+X, Y, Z = 'X', 'Y', 'Z'
+A, B, C = 'A', 'B', 'C'
 
-# Get value of shapes
+
+lose = 0
+draw = 3
+win = 6
+
+col1 = []
+col2 = []
+
+score = 0
+
+if X in data[0]:
+    score += 1
+elif Y in data[0]:
+    score += 2
+elif Z in data[0]:
+    score += 3
+
+print(score)
+
+# for round in data:
+#     col1.append(round[0])
+#     col2.append(round[2])
+# print(col2)
+
 
 # Get total score for one round
     # Get score of shape
