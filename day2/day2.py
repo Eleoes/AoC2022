@@ -38,3 +38,15 @@ for round in data:
 
 print("The total score is: ", score)
 
+# PART II
+real_score = 0
+
+real_outcomes = {
+    "A X": 3, "A Y": 4, "A Z": 8,
+    "B X": 1, "B Y": 5, "B Z": 9,
+    "C X": 2, "C Y": 6, "C Z": 7
+}
+
+for round in data:
+    real_score += real_outcomes[round]
+print("The real total score is: ", real_score)
