@@ -23,4 +23,18 @@ with open('day2.in') as file:
 # C vs Y = LOSE = (2 + 0) = 2
 # C vs Z = DRAW = (3 + 3) = 6
 
+outcomes = {
+    "A X": 4, "A Y": 8, "A Z": 3,
+    "B X": 1, "B Y": 5, "B Z": 9,
+    "C X": 7, "C Y": 2, "C Z": 6
+}
+
+score = 0
+
+for round in data:
+    score += outcomes[round]
+
+# Print score
+
+print("The total score is: ", score)
 
