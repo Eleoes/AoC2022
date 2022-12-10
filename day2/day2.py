@@ -2,38 +2,25 @@
 with open('day2.in') as file:
     data = [i for i in file.read().strip().split('\n')]
 
-# print(data)
+# A/X = ROCK
+# B/Y = PAPER
+# C/Z = SCISSORS
 
-X, Y, Z = 'X', 'Y', 'Z'
-A, B, C = 'A', 'B', 'C'
+# LOSE = 3
+# DRAW = 3
+# WIN = 6
 
-
-lose = 0
-draw = 3
-win = 6
-
-col1 = []
-col2 = []
-
-score = 0
-
-if X in data[0]:
-    score += 1
-elif Y in data[0]:
-    score += 2
-elif Z in data[0]:
-    score += 3
-
-print(score)
-
-# for round in data:
-#     col1.append(round[0])
-#     col2.append(round[2])
-# print(col2)
+# ----------------------------------------------------------------
+# left vs right | outcome | right + outcome = total
+# ----------------------------------------------------------------
+# A vs X = DRAW = (1 + 3) = 4
+# A vs Y = WIN = (2 + 6) = 8
+# A vs Z = LOSE = (3 + 0) = 3
+# B vs X = LOSE = (1 + 0) = 1
+# B vs Y = DRAW = (2 + 3) = 5
+# B vs Z = WIN = (3 + 6) = 9
+# C vs X = WIN = (1 + 6) = 7
+# C vs Y = LOSE = (2 + 0) = 2
+# C vs Z = DRAW = (3 + 3) = 6
 
 
-# Get total score for one round
-    # Get score of shape
-    # Get score of outcome
-
-# Get total score for all rounds
