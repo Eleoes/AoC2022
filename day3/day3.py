@@ -23,3 +23,19 @@ for rucksack in rucksacks:
             total_sum += priority + 1
 
 print("Total sum: ", total_sum)
+
+# Part II
+
+j = 3
+total_sum = 0
+
+for i in range(0, len(rucksacks), 3):
+    groups = rucksacks[i:j]
+    j += 3
+    # print(groups)
+
+    for priority, letter in enumerate(ascii_letters):
+        if letter in groups[0] and letter in groups[1] and letter in groups[2]:
+            total_sum += priority + 1
+
+print("Total sum: ", total_sum)
