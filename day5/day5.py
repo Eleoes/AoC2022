@@ -57,3 +57,22 @@ for instruction in instructions:
         stacks[to_stack].append(crate_removed)
 
 print("Answer for Part I: ", getStackEnds())
+
+# PART II
+emptyStacks()
+loadStacks()
+for instruction in instructions:
+    instruction = instruction.replace("move", "").replace("from ", "").replace("to ", "").strip().split(" ")
+    instruction = [int(i) for i in instruction]
+
+    crates = instruction[0]
+    from_stack = instruction[1]
+    to_stack = instruction[2]
+
+    crates_to_remove = stacks[from_stack][-crates:]
+    stacks[from_stack] = stacks[from_stack][:-crates]
+
+    for crate in crates_to_remove:
+        stacks[to_stack].append(crate)
+
+print("Answer to part 2: ", getStackEnds())
