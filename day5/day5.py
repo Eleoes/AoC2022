@@ -29,5 +29,31 @@ def loadStacks():
                 stacks[stack_num].insert(0, string[index])
             stack_num += 1
 
+def emptyStacks():
+    for stack_num in stacks:
+        stacks[stack_num].clear()
+
+def getStackEnds():
+    answer = ""
+    for stack in stacks: 
+        answer += stacks[stack][-1]
+    return answer
+
 loadStacks()
 displayStacks()
+
+# PART I 
+for instruction in instructions:
+    instruction = instruction.replace("move", "").replace("from ", "").replace("to ", "").strip().split(" ")
+    instruction = [int(i) for i in instruction]
+
+    num_crates = instruction[0]
+    from_stack = instruction[1]
+    to_stack = instruction[2]
+
+    # start moving one crate at a time
+    for crate in range(num_crates):
+        crate_removed = stacks[from_stack].pop()
+        stacks[to_stack].append(crate_removed)
+
+print("Answer for Part I: ", getStackEnds())
